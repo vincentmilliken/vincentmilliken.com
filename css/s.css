@@ -1,0 +1,1075 @@
+/*
+	
+	The big daddy of CSS resets... 
+	
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	
+	Eric Meyer					:: http://ericmeyer.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+	
+	Contents:
+	Reset
+	Clear Fix (http://nicolasgallagher.com/micro-clearfix-hack/)
+	Quotes (html5doctor.com/blockquote-q-cite)
+	Print
+	Media
+	
+-------------------------------------------------------------------------------*/
+
+
+/* Grid CSS */
+
+@import url("grid.css");
+
+/* @font-face */
+
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('font/proximanova-regular-webfont.eot');
+    src: url('font/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/proximanova-regular-webfont.woff') format('woff'),
+         url('font/proximanova-regular-webfont.ttf') format('truetype'),
+         url('font/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova_rgbold';
+    src: url('font/proximanova-bold-webfont.eot');
+    src: url('font/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/proximanova-bold-webfont.woff') format('woff'),
+         url('font/proximanova-bold-webfont.ttf') format('truetype'),
+         url('font/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Reset */
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}									
+
+article, aside, figure, footer, header, hgroup, nav, section {display: block;}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+	white-space: pre; /* CSS2 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+ 
+/* Accessible focus treatment
+	people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {outline: none;}
+
+small {font-size: 85%;}
+
+strong, th {font-weight: bold;}
+
+td, td img {vertical-align: top;} 
+
+/* Make sure sup and sub don't screw with your line-heights
+	gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label, 
+input[type=button], 
+input[type=submit], 
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button {width: auto; overflow: visible;}
+ 
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover */
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+/* Ok, this is where the fun starts.
+-------------------------------------------------------------------------------*/
+
+/* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
+body {font: 13px Helmet, Freesans, sans-serif;}
+
+/* using local fonts? make sure to read up on Paul Irish's 
+	Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ */
+
+/* we like off-black for text */
+body, select, input, textarea {color: #333;}
+
+a {color: #03f;}
+a:hover {color: #69f;}
+
+/* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
+::selection {background: #fcd700; color: #fff; text-shadow: none;} 
+
+/*	j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: #fcd700;} 
+
+ins {background-color: #fcd700; color: #000; text-decoration: none;}
+mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+
+
+/* clear fix ------------------------------------------------------------------ */
+
+.media:before,
+.media:after,
+.island:before,
+.island:after,
+.islet:before,
+.islet:after,
+.cf:before,
+.cf:after{
+	content:"";
+	display:table;
+}
+.media:after,
+.island:after,
+.islet:after,
+.cf:after{
+	clear:both;
+}
+.media,
+.island,
+.islet,
+.cf{
+	zoom:1;
+}
+
+/* quotes ------------------------------------------------------------------ */
+
+q{ quotes:"Ô" "Õ" "Ò" "Ó"; }
+
+q:before{ content:"Ô"; content:open-quote; }
+q:after{ content:"Õ"; content:close-quote; }
+
+q q:before{ content: "Ò"; content: open-quote; }
+q q:after{ content: "Ó"; content: close-quote; }
+
+blockquote{ quotes: "Ò" "Ó"; }
+blockquote p:before{ content: "Ò"; content: open-quote; }
+blockquote p:after{ content: ""; content: no-close-quote; }
+blockquote p:last-of-type:after{ content: "Ó"; content: close-quote; }
+
+blockquote{
+	text-indent:-0.4em;
+}
+.source{
+	display:block;
+	text-indent:0;
+	margin-top:-Xpx;
+	margin-top:-Xrem;
+}
+.source:before{
+	content:"Ñ";
+}
+
+/* Responsive Reset */
+@-o-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@viewport { width: device-width; }
+html { overflow-y: auto; }
+img, audio, video, canvas { max-width: 100% }
+
+
+/* End, start all your lovely styles below this comment...
+-------------------------------------------------------------------------------*/
+
+html {
+	background-color: #556270;
+}
+
+body {
+	color: #9094A3;
+	
+	/* Other colours #DEE0E8, #E3E5ED = main colour #e6e8f0 
+	
+	Other colours to try = 5F708A, 8B98A8,  737F91. 
+	
+	Best colour: 9CA6CC
+	
+	bdc3d5
+	
+	Current colour: #9094A3;
+	
+			
+	*/
+	
+	text-rendering: optimizeLegibility;
+}
+
+.hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* Use this class to hide text over an image instead of the -9999px hack. */
+
+/* Header styles ------------------------------------------------------------------ */
+
+#shadow {
+	width: 100%;
+	height: 21px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	background-image: url(' ');
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+.site-header {
+	border-bottom: 1px solid #bdc3d5;
+	min-height: 125px;
+	padding-right: 13px;
+	/* margin: 0 40px 0 40px; */
+}
+
+.logo img {
+	width: 330px;
+}
+
+.logo {
+	margin: 30px 0 10px 15px;
+	background-image: url('../img/logo.png');
+	background-repeat: no-repeat;
+	background-position: 3% 61%;
+	height: 65px;
+}
+
+.logo a {
+	padding: 65px;
+	text-decoration: none;
+	text-indent: -9999em;
+	width: 5%;
+}
+
+/*
+.logo h1 {
+	font-family: 'proxima_nova_rgregular';
+	font-size: 24px;
+	margin: 0px 0 0 40px;
+	padding-top: 50px;
+}
+
+.logo a {
+	text-decoration: none;
+	color: #9094A3;
+}
+*/
+
+.logo h2 {
+	font-family: 'proxima_nova_rgregular';
+	font-size: 11px;
+	margin: 5px 0 2px 77px;
+}
+
+.navigation {
+	font-family: 'proxima_nova_rgregular';
+	font-size: 16px;
+	padding-top: 51px;
+}
+
+.navigation ul {
+	float: right;
+}
+
+.navigation li {
+	list-style: none;
+	float: left;
+	padding: 0 20px 0 0;
+}
+
+.navigation a {
+	text-decoration: none;
+	color:  #a3a7b6;
+}
+
+.navigation a:hover {
+	color: #afb6cc;
+}
+
+/* styles for desktop */
+.tinynav { display: none }
+
+/* styles for mobile */
+@media screen and (max-width: 600px) {
+    .tinynav { display: block }
+    #nav { display: none }
+}
+
+/* content styles ------------------------------------------------------------------ */
+
+.main {
+	background-color: #ffffff;
+	padding: 0px;
+}
+
+.wrapper {
+	min-height: 600px;
+}
+
+.dynamo {
+	margin-bottom: -6px;
+}
+
+.intro {
+	text-align: center;
+	min-height: 320px;
+	padding-top: 70px;
+	/* border-bottom: 1px solid ; */
+}
+
+.intro h1 {
+	font-family: 'proxima_nova_rgregular';
+	font-size: 52px;
+	margin-bottom: 1.5rem;
+	/* text-shadow: 1px 1px 0px #cbd0e2; */
+}
+
+.intro h2 {
+	font-family: 'Merriweather';
+	font-size: 18px;
+	color: #a3a7b6;
+	margin-bottom: 35px;
+	line-height: 25px;
+}
+
+.bio {
+	width: 71%;
+	margin: 0 auto;
+}
+
+.twitter {
+	color: #9cd9f7;
+	text-decoration: none;
+}
+
+.twitter:hover {
+	color: #71c4ee;
+}
+
+.dribbble {
+	color: #f581ae;
+	text-decoration: none;
+}
+
+.dribbble:hover {
+	color: #e56c9b;
+}
+
+.github {
+	color: #444444;
+	text-decoration: none;
+}
+
+.github {
+	color: #646464;
+	text-decoration: none;
+}
+
+.github:hover {
+	color: #4e4d4e;
+}
+
+.soundcloud {
+	color: #fa7f35;
+	text-decoration: none;
+}
+
+.soundcloud:hover {
+	color: #e96f25;
+}
+
+.email {
+	color: #acb0c0;
+	text-decoration: none;
+}
+
+.email:hover {
+	color: #9fa0a3;
+}
+
+.work {
+	background-color: #fff;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(100%, #eeeeee));
+	background-image: -webkit-linear-gradient(top, #f8f8f8, #eeeeee);
+	background-image: -moz-linear-gradient(top, #f8f8f8, #eeeeee);
+	background-image: -ms-linear-gradient(top, #f8f8f8, #eeeeee);
+	background-image: -o-linear-gradient(top, #f8f8f8, #eeeeee);
+	background-image: linear-gradient(top, #f8f8f8, #eeeeee);
+	border: 1px solid #bdc3d5;
+	border-radius: 3px;
+	color: #9094A3;
+	font-family: 'proxima_nova_rgregular';
+	font-size: 16px;
+	padding: 15px 35px;
+	text-shadow: 0 1px 0 #eee;
+	text-decoration: none;
+	}
+  
+.work:hover {
+    border: 1px solid #c5cadf;
+    cursor: pointer;
+    color: #bcbdc0;
+}
+    
+.work:active {
+	background-color: #fff;
+    border: 1px solid #c5cadf;
+    -webkit-box-shadow: inset 0 0 10px 1px #d2d2d2, 0 1px 0 0 #f4f4f4;
+    box-shadow: inset 0 0 10px 1px #d2d2d2, 0 1px 0 0 #f4f4f4; 
+}
+
+.dribbbleFull {
+	margin-top: 50px;
+}
+
+.dribbble-big li {
+	float: left;
+	list-style: none;
+	width: 25%;
+}
+
+.home-content {
+	min-height: 180px;
+	padding-bottom: 40px;
+}
+
+.small-bio h3 {
+	font-size: 30px;
+	padding-bottom: 9px;
+	font-family: 'proxima_nova_rgregular';
+}
+
+.small-bio p {
+	font-size: 1.2em;
+	line-height: 1.8em;
+	font-family: 'Merriweather';
+	padding: 0 50px 0 0;
+	color: #a3a7b6;
+}
+
+.me {
+	background-image: url('../img/me-big.png');
+	background-repeat: no-repeat;
+	background-position: 50% 70%;
+	height: 174px;
+}
+
+.skils-content {
+	text-align: center;
+	min-height: 300px;
+}
+
+.skils-content h2 {
+	font-size: 30px;
+	margin-top: 10px;
+	font-family: 'proxima_nova_rgregular';
+}
+
+.skils-content p {
+	font-size: 14px;
+	line-height: 21px;
+	margin-top: 5px;
+	padding: 0px 40px 0px 40px;
+	font-family: 'Merriweather';
+	color: #a3a7b6;
+}
+
+.skills {
+	min-height: 200px;
+	margin: 40px 0 40px 0;
+}
+
+.skills {
+	font-family: 'proxima_nova_rgregular';
+	font-size: 20px;
+	padding: 0 0 0 85px;
+}
+
+.skills ul
+{
+	list-style-type:none;
+	margin: 17px 35px 25px 7px;
+}
+
+.skills li
+{
+	background-image:url('../img/tick.png');
+	background-repeat:no-repeat;
+	background-position: left center;
+	padding-left: 20px;
+	margin-bottom: 9px;
+	font-size: 14px;
+	font-family: 'Merriweather';
+}
+
+.location {
+	background-image: url('../img/map.png');
+	background-repeat: no-repeat;
+	background-position: 0% 40%;
+	height: 250px;
+}
+
+/* Icon styles ------------------------------------------------------------------ */
+
+
+.icon-brush, .icon-code, .icon-globe {
+	font-size: 3em;
+}
+
+.split {
+	height: 30px;
+}
+
+.icon-star {
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	vertical-align: top;
+}
+
+.r-left {
+	border-bottom: 1px solid #ddd;
+	height: 1px;
+	margin-left: 10px;
+	float: left;
+	width: 46%;
+}
+
+.r-right {
+	border-bottom: 1px solid #ddd;
+	height: 1px;
+	float: right;
+	width: 46%;
+}
+
+.icon-twitter {
+	font-size: 3em;
+}
+
+.tweet a {
+	color: #9cd9f7;
+	text-decoration: none;
+}
+
+.tweet a:hover {
+	color: #71c4ee;
+}
+
+.tweet {
+	padding: 40px 0 80px 0;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 18px;
+	font-family: 'Merriweather';
+}
+
+/* Portfolio styles ------------------------------------------------------------------ */
+
+.portfolio {
+	margin: 30px;
+	font-family: 'proxima_nova_rgregular';
+}
+
+.portfolio p {
+	font-family: 'Merriweather';
+	font-size: 15px;
+}
+
+.portfolio h2 {
+	font-size: 32px;
+}
+
+.portfolio-text h3 {
+	font-size: 22px;
+	margin: 30px;
+}
+
+.portfolio-text p {
+	font-family: 'Merriweather';
+	margin: 30px;
+	line-height: 20px;
+}
+
+
+.portfolio-text h3 p {
+	margin: 30px;
+}
+
+.portfolio-image img {
+	margin: 30px;
+}
+
+.dribbble-portfolio a {
+	text-decoration: none;
+	color: #9094a3;
+}
+
+.dribbble-portfolio a:hover {
+	text-decoration: underline;
+}
+
+.dribbble-portfolio h3 {
+	font-family: 'proxima_nova_rgregular';
+	font-size: 22px;
+	padding-left: 30px;
+}
+
+#dribbble {
+	margin-top: 15px;
+}
+
+#dribbble li {
+	list-style: none;
+	float: left;
+	width: 20.72881%;
+	margin-bottom: 2.4%;
+	display: inline;
+	margin-left: 3.69492%;
+}
+
+.dribbble-portfolio {
+	margin-bottom: 35px;
+}
+
+
+
+/* Resume styles ------------------------------------------------------------------ */
+
+.resume-header {
+	min-height: 125px;
+	padding-right: 13px;
+	border-bottom: 1px solid #bdc3d5;
+}
+
+.resume-header h1 {
+	font-family: 'proxima_nova_rgregular';
+	font-size: 37px;
+	margin: 0px 0 0 55px;
+	padding-top: 40px;
+}
+
+.resume-header h2 {
+	font-size: 17px;
+	margin: 0px 0 0 55px;
+	padding-top: 55px;
+	font-weight: 400;
+}
+
+.resume {
+	font-family: 'proxima_nova_rgregular';
+	margin: 0px 45px 45px 45px;
+	padding-top: 35px;
+}
+
+.resume-intro {
+	margin-top: 45px;
+}
+
+.resume-intro-right  {
+	margin: 45px 0 0 0;
+}
+
+.resume-left a {
+	text-decoration: underline;
+	color: #9094A3;
+}
+
+.resume-left a:hover {
+	color: #afb6cc;
+}
+
+.resume-intro-right  a {
+	text-decoration: underline;
+	color: #9094A3;
+}
+
+.resume-intro-right  a:hover {
+	color: #afb6cc;
+}
+
+.cv-intro {
+	margin-bottom: 40px;
+}
+
+.resume h2 {
+	font-size: 30px;
+}
+
+.resume h4 {
+	font-size: 20px;
+	font-family: 'proxima_nova_rgbold';
+	margin-bottom: 10px;
+}
+
+.resume ul {
+	margin-bottom: 35px;
+}
+
+.resume li {
+	font-size: 15px;
+	font-weight: 100;
+	line-height: 22px;
+}
+
+.resume span {
+	font-weight: 100;
+	font-size: 13px;
+	font-style: italic;
+}
+
+.resume strong {
+	 font-family: 'proxima_nova_rgbold';
+	 font-size: 16px;
+	 
+}
+
+
+.showcase li {
+	margin-top: 30px;
+}
+
+.resume-skills ul
+{
+	list-style-type:none;
+	margin: 17px 35px 25px 7px;
+}
+
+.resume-skills li
+{
+	background-image:url('../img/tick.png');
+	background-repeat:no-repeat;
+	background-position: left center;
+	padding-left: 20px;
+	margin-bottom: 9px;
+	font-size: 14px;
+}
+
+.nolist-bg li {
+	background-image: none;
+	padding-left: 0px;
+	padding-top: 10px;
+	margin-top: 5px;
+}
+
+.cv {
+	padding: 10px 25px 10px 25px; 
+}
+
+/* Contact styles ------------------------------------------------------------------ */
+
+.alert-message{
+	margin-left: 30px;
+}
+
+.contact {
+	margin: 30px;
+	font-family: 'proxima_nova_rgregular';
+}
+
+.contact a {
+	text-decoration: underline;
+	color: #9094A3;
+}
+
+.contact h2 {
+	font-size: 32px;
+}
+
+.contact p {
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.contact-form {
+	height: 300px;
+}
+
+.details {
+	width: 28%;
+	margin: 10px;
+	float: left;
+}
+
+.message {
+	margin: 15px 0px 10px 10px;
+	width: 67%;
+	float: left;
+}
+
+.name {
+	margin: 5px 20px 25px 20px;
+}
+
+.email {
+	margin: 5px 20px 5px 20px;
+}
+
+::-webkit-input-placeholder {
+   color: #9094A3;
+}
+
+:-moz-placeholder {  
+   color: #9094A3;  
+}
+
+:-ms-input-placeholder {  
+   color: #9094A3;  
+}
+
+input {
+	outline: none;
+	color: #9fa4b6;
+	border: #9fa4b6 1px solid;
+	border-radius: 5px;
+	padding: 20px 30px 20px 30px;
+	font-size: 20px;
+	font-family: 'Merriweather';
+	box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1) inset; 
+	transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+	-webkit-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+	-moz-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+	-o-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+}
+
+textarea {
+	outline: none;
+	font-size: 20px;
+	border: #9fa4b6 1px solid;
+	border-radius: 5px;
+	color: #9fa4b6;
+	resize: none;
+	height: 120px;
+	width: 92%;
+	padding: 20px 30px 20px 30px;
+	margin-bottom: 15px;
+	font-family: 'Merriweather';
+	box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1) inset; 
+	transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+	-webkit-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+	-moz-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+	-o-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+}
+
+.send {
+	float: right;
+	margin-right: 2px;
+	padding: 20px 50px 20px 50px;
+}
+
+.success {
+	margin-left: 30px;
+}
+
+/* footer styles ------------------------------------------------------------------ */
+
+.site-footer {
+	min-height: 75px;
+	padding-bottom: 20px;
+	border-top: 1px solid #eff1f7;
+}
+
+.colophon p {
+	padding: 40px 34px 0 0;
+}
+
+.colophon a {
+	text-decoration: none;
+	color:  #a3a7b6;
+}
+
+.colophon a:hover {
+	color: #afb6cc;
+}
+
+.meta p {
+	padding: 40px 0 0 54px;
+}
+
+/* Media queries!
+-------------------------------------------------------------------------------*/
+
+/* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media all and (max-width: 400px)  {
+
+	.logo h1{
+		width: 90%;
+	}
+		
+	.resume-header h2 {
+		padding-top: 0px;
+	}
+	
+	.navigation {
+		padding-bottom: 45px;
+		padding-top: 0px;
+	}	
+		
+}
+
+@media all and (max-width: 768px)  {
+		
+	.resume-header h2 {
+		padding-top: 0px;
+	}
+		
+	.navigation {
+		padding-bottom: 45px;
+		padding-top: 0px;
+	}	
+}
+
+@media screen and (max-device-width: 480px) {
+	
+	
+
+}
+
+
+
+/* Print styles for my CV 
+-------------------------------------------------------------------------------*/
+
+@media print {
+  
+	
+	@page :right {
+	margin: 0.8cm;
+	}
+	
+	@page :top {
+	margin: 0.8cm;
+	}
+	
+	p, h1, h2, h3, h4 {
+		font-size: 90%;
+	}
+	   
+	 p a:after {
+	content: " (" attr(href) ")";
+	}  
+	
+	.resume-header {
+		border-bottom: none;
+	}
+	
+	.resume-header h2 {
+	padding-top: 0px;
+	}
+	
+	.resume-skills li {
+		margin-bottom: 0px;
+		padding-left: 0px;
+	}
+	
+	.resume-right {
+		margin-top: 0.8cm;
+	}
+	
+	.resume-left {
+		margin-bottom: 0.8cm;
+	}
+	
+	.resume {
+		padding-top: 8px;
+	}
+	
+	.resume-intro {
+		margin-top: 20px;
+	}
+	
+	.nolist-bg {
+		display: none;
+	}
+	
+	.showcase, .showcase-heading {
+		display: none;
+	}
+	
+	footer {
+		display: none;
+	}
+	   
+}
